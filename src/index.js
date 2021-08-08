@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
+app.get("*", (req, res) => {
+    res.render('home')
+})
+
 app.listen(PORT, () => {
     console.log(`This app render in port local with http://localhost:${PORT}`);
 })
