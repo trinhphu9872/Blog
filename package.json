@@ -4,13 +4,14 @@
   "description": "Hello Node js",
   "main": "src/index.js",
   "scripts": {
+    // "beu":"prettier --single-quote --trailing-comma all --tab-width 4 --write src/**/*.{js,json,jsx,scss}" ,
     "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass --watch src/resources/scss -o src/public/css",
     "dev": "concurrently --kill-others \"npm start\" \"npm run watch \""
   },
   "lint-staged":{
-    "src/**/*.{js,json,jsx,scss}":"prettier --single-quote --trailing-comma all --tab-width 4 all --write" 
+    "src/**/*.{js,json,jsx,scss}":"prettier --single-quote --trailing-comma all --tab-width 4 --write" 
   },
   "repository": {
     "type": "git",
