@@ -17,7 +17,7 @@
     "url": "git+https://github.com/trinhphu9872/Blog_Nodejs.git"
   },
   "husky":{
-    "hook":{
+    "hooks":{
       "pre-commit": "lint-staged"
     }
   },
