@@ -3,7 +3,7 @@ const routes = express.Router();
 
 const siteController = require('../app/controllers/SiteController');
 
-routes.use('/sreach', siteController.sreach);
-routes.use('/', siteController.index);
+routes.get('/sreach', siteController.sreach);
+routes.get('/', siteController.index);
 
 module.exports = routes;

@@ -4,8 +4,11 @@ const handlebar = require('express-handlebars');
 const morgan = require('morgan');
 const app = express();
 const route = require('./resources/routes');
-
+const db = require('./config/db/index')
 const PORT = 8080;
+
+// connect db 
+db.connect();
 // using css and img with Static npm and node-sass
 app.use(express.static(path.join(__dirname, 'public')));
 // set views in project

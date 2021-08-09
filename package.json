@@ -4,8 +4,8 @@
   "description": "Hello Node js",
   "main": "src/index.js",
   "scripts": {
-    "check" : "lint-staged",
-    "beautycode":"prettier --single-quote --trailing-comma all --tab-width 4 --write src/**/*.{js,json,jsx,scss}",
+    "check": "lint-staged",
+    "beautycode": "prettier --single-quote --trailing-comma all --tab-width 4 --write src/**/*.{js,json,jsx,scss}",
     "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass --watch src/resources/scss -o src/public/css",
@@ -26,7 +26,8 @@
   "homepage": "https://github.com/trinhphu9872/Blog_Nodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "mongoose": "^5.13.6"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
