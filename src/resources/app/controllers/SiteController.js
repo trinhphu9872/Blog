@@ -1,10 +1,16 @@
 // setting controoller
 const course = require('../models/Course');
+const { mongoToArrayObject } = require('../../util/mongoose');
 class SiteController {
-    index(req, res) {
-        course.find({}, (err, doc) => {
-            return !err ? res.json(doc) : res.status(400).json({error : "Messgae error"})
-        })
+    index(req, res, next) {
+        course
+            .find({})
+            .then((course) => {
+                res.render('home', {
+                    course: mongoToArrayObject(course),
+                });
+            })
+            .catch(next);
     }
 
     sreach(req, res) {
