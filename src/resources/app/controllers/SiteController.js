@@ -13,8 +13,15 @@ class SiteController {
             .catch(next);
     }
 
-    sreach(req, res) {
-        res.render('sreach');
+    sreach(req, res, next) {
+        course
+            .find({})
+            .then((course) => {
+                res.render('sreach', {
+                    course: mongoToArrayObject(course),
+                });
+            })
+            .catch(next);
     }
 }
 
