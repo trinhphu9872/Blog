@@ -1,0 +1,30 @@
+<h2 class="text-primary">Đây là các khóa học</h2>
+<table class="table table-hover table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>ID</th>
+            <th>Tên Khóa Học</th>
+            <th>img</th>
+            <th>Description</th>
+            <th>Create time</th>\
+            
+        </tr>
+        </thead>
+        <tbody>
+            {{#each course}}
+            <tr>
+                <td scope="row">{{sum @index 1}}</td>
+                <td>{{this.name}}</td>
+                <td><img src="{{this.image}}" alt="" width="100px"></td>
+                <td>{{this.description}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>            
+                    <a href="/course/{{this._id}}/edit" class="btn btn-primary">Edit</a>
+                </td>
+                <td> 
+                     <a href="" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        {{/each}}
+</table>

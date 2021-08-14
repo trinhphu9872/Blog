@@ -30,6 +30,27 @@ class CoursesController {
             })
             .catch(next);
     }
+    // get update  /course/{{this._id}}/edit
+    edit(req, res, next) {
+        course
+            .findById(req.params.id)
+            .then((course) =>
+                res.render('course/edit', {
+                    course: mongoObject(course),
+                }),
+            )
+            .catch(next);
+    }
+
+    // PUT course/:id
+    update(req, res, next) {
+        console.log(res.body);
+        const data = req.body;
+        data.image = `https://img.youtube.com/vi/${data.id}/sddefault.jpg`;
+        Course.updateOne({ _id: req.params.id }, data)
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next);
+    }
 }
 
 module.exports = new CoursesController();
